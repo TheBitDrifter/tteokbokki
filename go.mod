@@ -4,7 +4,7 @@ go 1.24.1
 
 require (
 	github.com/TheBitDrifter/blueprint v0.0.0-20250312181352-30002bd4eec6
-	github.com/TheBitDrifter/warehouse v0.0.0-20250314122201-2ea94f647504
+	github.com/TheBitDrifter/warehouse v0.0.0-20250314130927-1476ce6b114f
 )
 
 require (
