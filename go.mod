@@ -1,10 +1,10 @@
 module github.com/TheBitDrifter/tteokbokki
 
-go 1.23.3
+go 1.24.1
 
 require (
-	github.com/TheBitDrifter/blueprint v0.0.0-00010101000000-000000000000
-	github.com/TheBitDrifter/warehouse v0.0.0-20250302193936-f395d653fb95
+	github.com/TheBitDrifter/blueprint v0.0.0-20250312181352-30002bd4eec6
+	github.com/TheBitDrifter/warehouse v0.0.0-20250314122201-2ea94f647504
 )
 
 require (
@@ -13,11 +13,3 @@ require (
 	github.com/TheBitDrifter/table v0.0.0-20250302173100-264081644811 // indirect
 	github.com/TheBitDrifter/util v0.0.0-20241102212109-342f4c0a810e // indirect
 )
-
-replace github.com/TheBitDrifter/blueprint => ../blueprint/
-
-replace github.com/TheBitDrifter/table => ../table/
-
-replace github.com/TheBitDrifter/warehouse => ../warehouse/
-
-replace github.com/TheBitDrifter/bark => ../bark/

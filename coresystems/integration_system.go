@@ -30,7 +30,7 @@ func (IntegrationSystem) Run(scene blueprint.Scene, dt float64) error {
 	// Helper function to integrate positions and rotations
 	integrate := func(query warehouse.QueryNode, hasRot bool) {
 		cursor := scene.NewCursor(query)
-		for cursor.Next() {
+		for range cursor.Next() {
 			dyn := blueprintmotion.Components.Dynamics.GetFromCursor(cursor)
 			position := blueprintspatial.Components.Position.GetFromCursor(cursor)
 
@@ -44,10 +44,6 @@ func (IntegrationSystem) Run(scene blueprint.Scene, dt float64) error {
 			newPos, newRot := motion.Integrate(dyn, position, float64(*rotation), dt)
 
 			// Store current position as previous position if component exists
-			if ok, prevPos := blueprintspatial.Components.PreviousPosition.GetFromCursorSafe(cursor); ok {
-				prevPos.X = position.X
-				prevPos.Y = position.Y
-			}
 
 			// Update position and rotation with new values
 			position.X = newPos.X

@@ -13,7 +13,7 @@ type TransformSystem struct{}
 // Run processes all entities with Shape components and updates their world vertices
 func (TransformSystem) Run(scene blueprint.Scene, dt float64) error {
 	cursor := scene.NewCursor(blueprint.Queries.Shape)
-	for cursor.Next() {
+	for range cursor.Next() {
 		shape := blueprintspatial.Components.Shape.GetFromCursor(cursor)
 		hasPos, pos := blueprintspatial.Components.Position.GetFromCursorSafe(cursor)
 		hasRot, rot := blueprintspatial.Components.Rotation.GetFromCursorSafe(cursor)
